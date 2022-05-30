@@ -15,9 +15,10 @@ Simply clone this reposity with git, enter cd into the cloned directory and ente
 
 If you had installed the console route and would like to edit the virtual machine's XML files, feel free to use `sudo virsh edit rpios`;
 include it the bottom before the end of `</devices>` 
-`<graphics type="vnc" port="-1" autoport="yes">
-  <listen type="address"/>
-</graphics>` 
+        
+        <graphics type="vnc" port="-1" autoport="yes">
+        <listen type="address"/>
+        </graphics> 
 
 Mind you this will not prohibit you from using rpicon; which is the console shortcut for lite users.
 What I'd also recommend to do is to compare a config if you have one, or just do some google-fu. If you'd want, install virt-manager with the distro of your choice (along with qemu). </br>

@@ -28,7 +28,7 @@ If you do no edit the XML file and instead installed the rpi system this way; yo
 
 # What are the commands?
 
-to shutdown the guest machine, run rpishut, to start it up; enter rpistart. To connect to the rpi guest machine via console enter rpicon; to connect to the rpi guest via gui enter rpivga. to uninstall it completely enter uninstrpi; will shutdown the running pi vm.
+to shutdown the guest machine, run rpishut, to start it up; enter rpistart. To connect to the rpi guest machine via console enter rpicon; to connect to the rpi guest via gui enter rpivga. to uninstall it completely enter uninstrpi; will shutdown the running pi vm and it will be undefined.
 
 # How can i resize the img
 `qemu-img resize /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.img 10G` is a good example. You may use whichever size you'd like, just be careful.

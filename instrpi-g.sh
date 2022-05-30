@@ -1,23 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-#Are you root?
+echo "The installer will proceed to install the RPI virtual machine with graphical capabilities."
 
-	if [ "$EUID" -ne 0 ];
-	  then echo "Please run sudo"
-		    exit
-else
-#Check if there's a dir, if there is; I will create a dir and copy files, if not skip.
-
-echo -e "This installer will download an image for raspberry-pi, proceed with the install? DO NOT POST ON GIT k thx."
-
-fi
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) echo "Ok let's get started.."; break;;
-
-		No ) echo "Goodbye."; exit;;
-	esac
-done
 
 if [ ! -d /usr/share/rpi ]; then
 mkdir /usr/share/rpi 2> /dev/null && chmod +x ./*.sh && cp ./* /usr/share/rpi
@@ -61,11 +45,11 @@ fi
 #Will download the files from a repository.
 
 if [ -d /usr/share/rpi/qemu-rpi-kernel ]; then
-		 virsh --connect=qemu:///system net-start default 
+		 virsh --connect=qemu:///system net-start default && sleep 5 &&
 		 /usr/share/rpi/rpicreate.sh
 		else
  [ ! -d /usr/share/rpi/qemu-rpi-kernel ]
  	git clone https://github.com/dhruvvyas90/qemu-rpi-kernel /usr/share/rpi/qemu-rpi-kernel &&
-	virsh --connect=qemu:///system net-start default 
+	virsh --connect=qemu:///system net-start default && sleep 5 &&
 		 /usr/share/rpi/rpicreate.sh
 fi

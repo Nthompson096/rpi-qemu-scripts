@@ -11,7 +11,7 @@ the img file is stored in `/var/lib/libvirt/images/` as an img file, name `2021-
 
 # How to install?
 
-Simply clone this reposity with git, enter cd into the cloned directory and run sudo sh ./instrpi-g for a graphical install or sudo sh ./instrpi-c for console install (power users, lite users).
+Simply clone this reposity with git, enter cd into the cloned directory and run sudo sh ./instrpi-sel.sh; it will ask for how'd you'd like to interface the inital install.
 
 If you had installed the console route and would like to edit the virtual machine's XML files, feel free to use `sudo virsh edit rpios`;
 include it the bottom before the end of `</devices>` 

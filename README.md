@@ -11,7 +11,7 @@ the img file is stored in `/var/lib/libvirt/images/` as an img file, name `2021-
 
 # How to install?
 
-Simply clone this reposity with git, run cd into the cloned directory and run sudo sh ./instrpi-g for a graphical install or ./instrpi-c for console install (power users, lite users).
+Simply clone this reposity with git, enter cd into the cloned directory and run sudo sh ./instrpi-g for a graphical install or sudo sh ./instrpi-c for console install (power users, lite users).
 
 If you had installed the console route and would like to edit the virtual machine's XML files, feel free to use `sudo virsh edit rpios`;
 include it the bottom before the end of `</devices>` 
@@ -28,7 +28,7 @@ If you do no edit the XML file and instead installed the rpi system this way; yo
 
 # What are the commands?
 
-to shutdown the guest machine, run rpishut, to start it up; enter rpistart; to connect to the rpi guest machine via console enter rpicon; to connect to the rpi guest via gui enter rpivga. to uninstall it completely enter uninstrpi; will shutdown the running pi vm.
+to shutdown the guest machine, run rpishut, to start it up; enter rpistart. To connect to the rpi guest machine via console enter rpicon; to connect to the rpi guest via gui enter rpivga. to uninstall it completely enter uninstrpi; will shutdown the running pi vm.
 
 # How can i resize the img
 `qemu-img resize /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.img 10G` is a good example. You may use whichever size you'd like, just be careful.

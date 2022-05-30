@@ -14,8 +14,8 @@ github repo. Choose 1 for graphical install or 2 for console install."
 fi
 select yn in "graphical" "console"; do
     case $yn in
-        graphical ) echo "Choosing graphical install for RPI" |& chmod +x ./*.sh |& ./instrpi-g.sh; exit;;
+        graphical ) echo "Choosing graphical install for RPI" |& chmod +x ./*.sh && ./instrpi-g.sh; exit;;
 
-		console ) echo "Choosing console install for RPI" |& chmod +x ./*.sh |& ./instrpi-c.sh; exit;;
+		console ) echo "Choosing console install for RPI" |& chmod +x ./*.sh && ./instrpi-c.sh; exit;;
 	esac
 done

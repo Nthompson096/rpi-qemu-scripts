@@ -7,7 +7,7 @@ the img file is stored in `/var/lib/libvirt/images/` as an img file, name `2021-
 # Prerequest before running
 
 1. qemu (qemu-full for arch)
-2.virt-manager (optional) 
+2. virt-manager (optional) 
 
 # How to install?
 

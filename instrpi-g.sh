@@ -4,7 +4,7 @@ echo "The installer will proceed to install the RPI virtual machine with graphic
 
 
 if [ ! -d /usr/share/rpi ]; then
-mkdir /usr/share/rpi 2> /dev/null && chmod +x ./*.sh && cp ./* /usr/share/rpi
+mkdir /usr/share/rpi 2> /dev/null && cp ./* /usr/share/rpi
 fi
 		if [ ! -f /usr/bin/rpistart ]; then
 		echo "Creating a start commands for virsh" && ln -sf /usr/share/rpi/rpistart.sh /usr/bin/rpistart 
@@ -45,11 +45,11 @@ fi
 #Will download the files from a repository.
 
 if [ -d /usr/share/rpi/qemu-rpi-kernel ]; then
-		 virsh --connect=qemu:///system net-start default && sleep 5 &&
+		 virsh --connect=qemu:///system net-start default
 		 /usr/share/rpi/rpicreate.sh
 		else
  [ ! -d /usr/share/rpi/qemu-rpi-kernel ]
  	git clone https://github.com/dhruvvyas90/qemu-rpi-kernel /usr/share/rpi/qemu-rpi-kernel &&
-	virsh --connect=qemu:///system net-start default && sleep 5 &&
+	virsh --connect=qemu:///system net-start default
 		 /usr/share/rpi/rpicreate.sh
 fi

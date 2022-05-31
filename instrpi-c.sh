@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#Check if there's a dir, if there is; I will create a dir and copy files, if not skip.
-
 echo "The installer will proceed to install the RPI virtual machine with just the console."
 
 
@@ -44,7 +42,7 @@ wget -c 'https://downloads.raspberrypi.org/raspios_oldstable_armhf/images/raspio
 unzip /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.zip -d /var/lib/libvirt/images/
 fi
 
-#Will download the files from a repository; will check if the clone is there.
+#Will download the files from a repository.
 
 if [ -d /usr/share/rpi/qemu-rpi-kernel ]; then
 		 virsh --connect=qemu:///system net-start default

@@ -1,10 +1,5 @@
 #!/bin/sh
-	
-	if
-    [ -f /usr/bin/remwrpi ]; then
-	rm /usr/bin/remwrpi 
-	fi
-	
+
 	if
 	[ -f /usr/bin/rpistart ] ; then
 	rm /usr/bin/rpistart
@@ -31,14 +26,13 @@
 	rm /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.img 2> /dev/null
     fi
 if [ -f /etc/libvirt/qemu/rpios.xml ]; then 
-	virsh --connect=qemu:///system destroy rpios ||
-    virsh --connect=qemu:///system undefine rpios
+	virsh --connect=qemu:///system destroy rpios |
+    virsh --connect=qemu:///system undefine rpios |&
+    rm /usr/bin/remwrpi |&
+    rm -r /usr/share/rpi
 else
 	[ ! -f /etc/libvirt/qemu/rpios.xml ]
-	echo "XML documents not found, skipping."
-fi
-
-    if
-    [ -d /usr/share/rpi/ ]; then 
+	echo "XML documents not found, skipping." |&
+	rm /usr/bin/remwrpi |&
 	rm -r /usr/share/rpi
-	fi
+fi

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 #Check if there's a dir, if there is; I will create a dir and copy files, if not skip.
 
 echo "The installer will proceed to install the RPI virtual machine with just the console."

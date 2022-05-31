@@ -41,5 +41,7 @@ to shutdown the guest machine, run rpishut, to start it up; enter rpistart. To c
 
 [How to run the Raspberry Pi OS in a virtual machine with Qemu and Kvm](https://linuxconfig.org/how-to-run-the-raspberry-pi-os-in-a-virtual-machine-with-qemu-and-kvm) </br>
 [Virtualization Administration Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/index)
+</br>
+[dhruvvyas90 for the RPI kernel](https://github.com/dhruvvyas90/qemu-rpi-kernel)
 
 Please star this reposity if you ever found this useful.

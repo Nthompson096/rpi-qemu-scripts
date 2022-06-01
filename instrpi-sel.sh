@@ -12,10 +12,12 @@ echo -e "This installer will download an image for raspberry-pi, proceed with th
 github repo. Choose 1 for graphical install or 2 for console install."
 
 fi
-select yn in "graphical" "console"; do
+select yn in "graphical" "console" "cancel"; do
     case $yn in
         graphical ) echo "Choosing graphical install for RPI" |& chmod +x ./*.sh && ./instrpi-g.sh; exit;;
 
 		console ) echo "Choosing console install for RPI" |& chmod +x ./*.sh && ./instrpi-c.sh; exit;;
+
+		cancel ) exit;;
 	esac
 done

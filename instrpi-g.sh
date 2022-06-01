@@ -35,12 +35,31 @@ fi
 		fi
 		#end
 
+
+
 #Will download the RPI image here. Will ask if you want to re-extract the img even if fully downloaded.
 
-if [ -f /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.zip ] || [ ! -f /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.zip ]; then
-wget -c 'https://downloads.raspberrypi.org/raspios_oldstable_armhf/images/raspios_oldstable_armhf-2021-12-02/2021-12-02-raspios-buster-armhf.zip' -P /var/lib/libvirt/images/ &&
-unzip /var/lib/libvirt/images/2021-12-02-raspios-buster-armhf.zip -d /var/lib/libvirt/images/
-fi
+#Ask which ver you would like to DL,
+#Links
+# https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2022-01-28/2022-01-28-raspios-bullseye-arm64.zip
+# https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-05-28/2021-05-07-raspios-buster-arm64.zip
+
+echo "This will choose the desktop env for either Buster or Bullseye; will overwrite your virtual. Uninstall if trying to reinstall."
+select yn in "Buster graphical" "Bullseye graphical" "Cancel"; do
+    case $yn in
+        'Buster graphical' ) echo "Choosing console install for Buster RPI" 
+        wget -c 'https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip' -P /var/lib/libvirt/images/ &&
+		unzip /var/lib/libvirt/images/2020-05-27-raspios-buster-armhf.zip -d /var/lib/libvirt/images/ && 
+		mv /var/lib/libvirt/images/2020-05-27-raspios-buster-armhf.img /var/lib/libvirt/images/rpi.img; break;;
+
+		'Bullseye graphical' ) echo "Choosing console install for Bullseye RPI" 
+        wget -c 'https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-01-28/2022-01-28-raspios-bullseye-armhf.zip' -P /var/lib/libvirt/images/ &&
+		unzip /var/lib/libvirt/images/2022-01-28-raspios-bullseye-armhf.zip -d /var/lib/libvirt/images/ && 
+		mv /var/lib/libvirt/images/2022-01-28-raspios-bullseye-armhf.img /var/lib/libvirt/images/rpi.img; break;;
+		
+		Cancel ) echo "Ok, goodbye."; exit;;
+	esac
+done
 
 #Will download the files from a repository.
 

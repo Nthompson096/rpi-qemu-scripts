@@ -28,7 +28,7 @@ Mind you this will not prohibit you from using rpicon; which is the console shor
 What I'd also recommend to do is to compare a config if you have one, or just do some google-fu. If you'd want, install virt-manager with the distro of your choice (along with qemu). </br>
 *You cannot initialize the installer again to edit the xml doucments to add in graphics; this will not work.*
 
-If you do no edit the XML file and instead installed the rpi system this way; you'll have to stick using `rpicon`.
+If you do not edit the XML file and instead installed the rpi system this way; you'll have to stick using `rpicon`.
 
 
 # What are the commands?

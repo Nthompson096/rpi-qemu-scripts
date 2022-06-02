@@ -38,7 +38,7 @@ to shutdown the guest machine, run rpishut, to start it up; enter rpistart. To c
 
 # How can i resize the img
                 
-    qemu-img resize /var/lib/libvirt/images/rpi.img 10G
+    sudo qemu-img resize /var/lib/libvirt/images/rpi.img 10G
 
 is a good example. You may use whichever size you'd like, just be careful and be sure the guest is shut down.
 

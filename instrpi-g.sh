@@ -31,32 +31,36 @@ select yn in "Buster graphical" "Bullseye graphical" "Cancel"; do
 	esac
 done
 
-		if [ ! -f /usr/bin/rpistart ]; then
-		echo "Creating a start commands for virsh" && ln -sf /usr/share/rpi/rpistart.sh /usr/bin/rpistart 
-		else
-		[ -f /usr/bin/rpistart  ]
+if [ ! -f /usr/bin/rpistart ]; then
+		
+			echo "Creating a start commands for virsh" && ln -sf /usr/share/rpi/rpistart.sh /usr/bin/rpistart 
+		
 		fi
 		#end
-		if [ ! -f /usr/bin/rpishut ]; then
-		echo "Creating a shutdown command for virsh" && ln -sf /usr/share/rpi/rpishut.sh /usr/bin/rpishut 
-		else
-		[ -f /usr/bin/rpishut  ]
+		
+if [ ! -f /usr/bin/rpishut ]; then
+		
+			echo "Creating a shutdown command for virsh" && ln -sf /usr/share/rpi/rpishut.sh /usr/bin/rpishut 
+		
 		fi
 		#end
-		if [ ! -f /usr/bin/uninstrpi  ]; then
-		echo "Creating the uninstall RPI terminal shortcut." && ln -sf /usr/share/rpi/uninstrpi.sh /usr/bin/uninstrpi 
-		else
-		[ -f /usr/bin/uninstrpi ]
+		
+if [ ! -f /usr/bin/uninstrpi  ]; then
+		
+			echo "Creating the uninstall RPI terminal shortcut." && ln -sf /usr/share/rpi/uninstrpi.sh /usr/bin/uninstrpi 
+		
 		fi
-		if [ ! -f /usr/bin/rpivga  ]; then
-		echo "Creating the connection for PI via vnc." && ln -sf /usr/share/rpi/rpivga.sh /usr/bin/rpivga 
-		else
-		[ -f /usr/bin/rpivga ]
+		
+if [ ! -f /usr/bin/rpivga  ]; then
+		
+			echo "Creating the connection for PI via vnc." && ln -sf /usr/share/rpi/rpivga.sh /usr/bin/rpivga 
+		
 		fi
-		if [ ! -f /usr/bin/rpicon  ]; then
-		echo "Creating the connection for PI via console." && ln -sf /usr/share/rpi/rpicon.sh /usr/bin/rpicon 
-		else
-		[ -f /usr/bin/rpicon ]
+		
+if [ ! -f /usr/bin/rpicon  ]; then
+		
+			echo "Creating the connection for PI via console." && ln -sf /usr/share/rpi/rpicon.sh /usr/bin/rpicon
+		
 		fi
 		#end
 

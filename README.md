@@ -42,6 +42,13 @@ to shutdown the guest machine, run rpishut, to start it up; enter rpistart. To c
 
 is a good example. You may use whichever size you'd like, just be careful and be sure the guest is shut down.
 
+# How can I transfer the img to a drive?
+
+you would enter this command:
+
+    sudo dd if=/var/lib/libvirt/images/rpi.img of=/dev/sd status=progress bs=4M
+
+Suppliment the info from the drive you are trying to flash with ``fdisk -l`` or ``blkid`` and replace /dev/sd with that instead.
 
 
 ### EoF:

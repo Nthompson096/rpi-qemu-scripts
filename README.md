@@ -8,6 +8,7 @@ the .img file is stored in `/var/lib/libvirt/images/` as an .img file, name `202
 
 1. qemu (qemu-full for arch)
 2. virt-manager (optional) 
+3. zip utils mainly unzip on the distro of your choice.
 
 # How to install?
 

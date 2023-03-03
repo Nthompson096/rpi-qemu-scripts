@@ -51,7 +51,7 @@ you would enter this command:
 
 Suppliment the info from the drive you are trying to flash with ``fdisk -l`` or ``blkid`` and replace /dev/sd with that instead.
 
-I may also recommend the rpi-imager if that is avaible on the distro that you use; just be sure to choose custom rom.
+I may also recommend the rpi-imager if that is available on the distro that you use; just be sure to choose custom rom.
 
 
 ### EoF:
